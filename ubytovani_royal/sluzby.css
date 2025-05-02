@@ -1,0 +1,145 @@
+/* Hlavní sekce pro služby */
+section {
+    padding: 80px 15%;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+section > div:first-child {
+    text-align: center;
+    padding-bottom: 40px;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section > div:first-child::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #333;
+    margin: 30px auto 0;
+}
+
+section > div:first-child h1 {
+    font-family: 'LogoFont', sans-serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+section > div:first-child h3 {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    font-weight: 400;
+}
+
+/* Řádky se službami */
+section > div:not(:first-child) {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 30px;
+}
+
+/* Jednotlivé služby */
+section > div:not(:first-child) > div {
+    flex: 1;
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+section > div:not(:first-child) > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Svislá čára mezi službami */
+section > div:not(:first-child) > div:first-child::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -30px;
+    height: 60%;
+    width: 1px;
+    background-color: #ddd;
+}
+
+/* Ikony */
+section > div:not(:first-child) > div i {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
+    display: block;
+}
+
+section > div:not(:first-child) > div h1 {
+    font-family: 'LogoFont', sans-serif;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+section > div:not(:first-child) > div span {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    display: block;
+}
+
+.testimonails-help-div{
+    margin: 0 auto;
+    width: 100%;
+}   
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 8%;
+        gap: 40px;
+    }
+    
+    section > div:not(:first-child) {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    section > div:not(:first-child) > div:first-child::after {
+        display: none;
+    }
+    
+    section > div:first-child h1 {
+        font-size: 28px;
+    }
+    
+    section > div:first-child h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 40px 5%;
+        gap: 30px;
+    }
+    
+    section > div:not(:first-child) > div {
+        padding: 30px 20px;
+    }
+    
+    section > div:not(:first-child) > div i {
+        font-size: 36px;
+    }
+    
+    section > div:not(:first-child) > div h1 {
+        font-size: 20px;
+    }
+}

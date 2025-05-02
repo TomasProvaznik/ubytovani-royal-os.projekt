@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hlavička sekce */
+.trip-section {
+    padding: 80px 8% 60px;
+    background-color: #fff;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h1 {
+    font-family: 'LogoFont', sans-serif;
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.section-header h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #333;
+    margin: 15px auto 0;
+}
+
+.section-header h3 {
+    font-size: 18px;
+    color: #666;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.trip-item {
+    display: flex;
+    margin-bottom: 60px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.trip-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.trip-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.trip-image-section {
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.trip-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.trip-item:hover .trip-image {
+    transform: scale(1.05);
+}
+
+.trip-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 30px 20px 20px;
+    color: white;
+}
+
+.trip-info-overlay h1 {
+    font-family: 'LogoFont', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.trip-info-overlay h3 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.trip-info-overlay h3 i {
+    margin-right: 8px;
+}
+
+.trip-route-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.trip-route-btn i {
+    margin-right: 8px;
+}
+
+.trip-route-btn:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* Pravá část s popisem */
+.trip-description {
+    width: 60%;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.trip-description-content {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Responzivní design */
+@media (max-width: 992px) {
+    .trip-item, .trip-item:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .trip-image-section, .trip-description {
+        width: 100%;
+    }
+    
+    .trip-image-section {
+        height: 300px;
+    }
+    
+    .trip-description {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header h1 {
+        font-size: 32px;
+    }
+    
+    .section-header h3 {
+        font-size: 16px;
+    }
+    
+    .trip-item {
+        margin-bottom: 40px;
+    }
+    
+    .trip-info-overlay h1 {
+        font-size: 20px;
+    }
+}
+
+/* Speciální barevné schéma pro jednotlivé sekce */
+.hiking-section {
+    background-color: #f4f8f2;
+}
+
+.cycling-section {
+    background-color: #f2f6f9;
+}
+
+.culture-section {
+    background-color: #f9f4f2;
+}
+
+.wellness-section {
+    background-color: #f2f4f9;
+}
+
+/* Horní oddělení sekcí */
+.trip-section:not(:first-of-type) {
+    position: relative;
+    margin-top: 100px;
+}
+
+.trip-section:not(:first-of-type)::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2), transparent);
+}
